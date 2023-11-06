@@ -38,7 +38,7 @@ function showNewImages() {
     imagePreview.src = images[0].src;
   }
   const page = Math.floor(Math.random() * 200);
-  fetch("https://loremflickr.com/320/240")
+  fetch("https://picsum.photos/v2/list?page=" + page + "&limit=4")
     .then((response) => response.json())
     .then((data) => {
       const images = document.querySelectorAll(".random-img");
@@ -65,7 +65,7 @@ function zoomInImage(event) {
     imagePreview.src = event.target.src;
 
     const page = Math.floor(Math.random() * 200);
-    fetch("https://loremflickr.com/320/240")
+    fetch("https://picsum.photos/v2/list?page=" + page + "&limit=4")
       .then((response) => response.json())
       .then((data) => {
         const images = document.querySelectorAll(".random-img");
@@ -133,7 +133,7 @@ function init() {
     clearTimeout(timerId);
     const imageContainer = document.querySelector(".img-container");
     const page = Math.floor(Math.random() * 200);
-    fetch("https://loremflickr.com/320/240")
+    fetch("https://picsum.photos/v2/list?page=" + page + "&limit=4")
       .then((response) => response.json())
       .then((data) => {
         const imagePreview = document.querySelector(".imgPreview");
